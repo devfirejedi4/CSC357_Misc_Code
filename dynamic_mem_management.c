@@ -57,6 +57,7 @@ int main(void)
 
     // Free the memory of ptr2
     free(ptr2);
+    ptr2 = NULL;
     printf("ptr2 memory successfully freed.\n");
 
     // Get the number of elements for the array
@@ -74,9 +75,9 @@ int main(void)
 
     printf("Memory successfully re-allocated using realloc.\n");
 
-    // Free the memory ptr1 (old pointer) is pointing to
-    //free(ptr1);
-    //printf("ptr1 memory successfully freed.\n");
+    // DO NOT Free the memory ptr1 (old pointer) is pointing to
+    // But you should set it to NULL
+    ptr1 = NULL;
 
     // Get the new elements of the array
     for (size_t i = 0; i < n; i++)
@@ -95,6 +96,7 @@ int main(void)
 
     // Free the memory
     free(new_ptr);
+    new_ptr = NULL;
     printf("new_ptr memory successfully freed.\n");
 
     return 0;
